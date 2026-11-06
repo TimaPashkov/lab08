@@ -188,7 +188,7 @@ int main() {
         cin >> x;
     }
 
-    int last = v.back();      // запоминаем последний элемент заранее
+    int last = v.back(); 
     for (int &x : v) {
         x += last;
     }
@@ -273,21 +273,20 @@ using namespace std;
 int main() {
     int n = 10;
 
-    // 1) обычный for: переменную цикла можно менять внутри тела
     cout << "for:   ";
     for (int i = 0; i < n; i++) {
         cout << i << " ";
-        i++;                       // пропускаем следующее число
+        i++;                    
     }
     cout << endl;
 
-    // 2) то, во что раскроется forc(i, 0, n)
+    
     cout << "forc:  ";
     {
         int __i = 0, __n = n;
         for (const int &i = __i; i < __n; __i++) {
             cout << i << " ";
-            // i++;                // ОШИБКА КОМПИЛЯЦИИ: i - это const-ссылка, менять её нельзя
+            // i++;
         }
     }
     cout << endl;
@@ -318,22 +317,22 @@ error: increment of read-only reference 'i'
 using namespace std;
 
 int main() {
-    // 1) обычный for: граница v.size() вычисляется заново на каждом шаге
+ 
     vector<int> v = {10, 20, 30};
     int count1 = 0;
     for (int i = 0; i < (int)v.size(); i++) {
         if (v.size() < 6) {
-            v.push_back(0);        // вектор растёт прямо во время цикла
+            v.push_back(0);   
         }
         count1++;
     }
     cout << "for:  шагов " << count1 << endl;
 
-    // 2) то, во что раскроется forc(i, 0, w.size())
+   
     vector<int> w = {10, 20, 30};
     int count2 = 0;
     {
-        int __i = 0, __n = w.size();   // граница посчитана один раз
+        int __i = 0, __n = w.size();  
         for (const int &i = __i; i < __n; __i++) {
             if (w.size() < 6) {
                 w.push_back(0);
@@ -406,7 +405,7 @@ int main() {
         cin >> x;
     }
 
-    bool found = false;            // флаг: нашли ли отрицательное число
+    bool found = false;            
     for (int x : numbers) {
         if (x < 0) {
             cout << "Найдено отрицательное число: " << x << endl;
