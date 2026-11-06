@@ -564,15 +564,15 @@ using namespace std;
 
 int main() {
     int n, m;
-    cin >> n >> m;                       // n строк, m столбцов
+    cin >> n >> m;                       
 
     vector<vector<int>> a(n, vector<int>(m));
     int sum = 0;
 
-    // один цикл на все n*m элементов
+   
     for (int k = 0; k < n * m; k++) {
-        int i = k / m;                   // номер строки
-        int j = k % m;                   // номер столбца
+        int i = k / m;                   
+        int j = k % m;                  
         cin >> a[i][j];
         sum += a[i][j];
     }
